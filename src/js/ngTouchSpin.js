@@ -101,7 +101,11 @@ angular.module('jkuri.touchspin', [])
 					ngModel.$setViewValue(val);
 				}
 			};
-
+			
+			//copy css and id reference
+            		element.find('.form-control').attr('id', element[0].id);
+            		element.removeClass('form-control');
+            		element.removeAttr('id');
 		},
 		template: 
 		'<div class="input-group">' +
