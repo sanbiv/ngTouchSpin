@@ -101,6 +101,25 @@ angular.module('jkuri.touchspin', [])
 					ngModel.$setViewValue(val);
 				}
 			};
+			
+			element.on("keydown keyup", function(e){
+				if (e.key === "ArrowDown"){
+		                	if (e.type === "keydown"){
+		                        	scope.startSpinDown();
+		                    	}
+		                    	else if (e.type === "keyup"){
+		                        	scope.stopSpin();
+		                    	}
+		                }
+		                else if (e.key === "ArrowUp"){
+		                    	if (e.type === "keydown"){
+		                        	scope.startSpinUp();
+		                    	}
+		                    	else if (e.type === "keyup"){
+		                        	scope.stopSpin();
+		                    	}
+		                }
+			});
 
 		},
 		template: 
